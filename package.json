@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/vikiesakki/ttd-kata-js",
+  "homepage": "https://vignesh92.github.io/test-app/",
   "scripts": {
     "dev": "vite",
     "test": "jest",
