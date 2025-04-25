@@ -25,4 +25,12 @@ describe('App Component', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('1');
   });
 
+  it('displays 6 when no values are entered', () => {
+    render(<App />);
+    fireEvent.change(screen.getByTestId('inputValue'), { target: { value: '1,5' } });
+    const button = screen.getByText('Add');
+    fireEvent.click(button);
+    expect(screen.getByTestId('result')).toHaveTextContent('6');
+  });
+
 });
