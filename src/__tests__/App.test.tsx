@@ -33,4 +33,12 @@ describe('App Component', () => {
     expect(screen.getByTestId('result')).toHaveTextContent('6');
   });
 
+  it('displays erro message when negative values are entered', () => {
+    render(<App />);
+    fireEvent.change(screen.getByTestId('inputValue'), { target: { value: '1\n-5-6' } });
+    const button = screen.getByText('Add');
+    fireEvent.click(button);
+    expect(screen.getByTestId('errorMsg')).toHaveTextContent('negative numbers not allowed-5,-6');
+  });
+
 });
