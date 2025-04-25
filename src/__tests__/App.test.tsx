@@ -8,4 +8,13 @@ describe('App Component', () => {
     const button = screen.getByText('Add');
     expect(button).toBeInTheDocument();
   });
+
+  it('displays 0 when no values are entered', () => {
+    render(<App />);
+    fireEvent.change(screen.getByTestId('inputValue'), { target: { value: '' } });
+    const button = screen.getByText('Add');
+    fireEvent.click(button);
+    expect(screen.getByTestId('result')).toHaveTextContent('0');
+  });
+
 });
